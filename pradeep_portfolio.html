@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pradeep Reddy — AI/ML Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,300;1,8..60,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --cream:#F2EDE3;
+  --cream-dark:#EAE3D5;
+  --cream-darker:#DDD4C2;
+  --parchment:#F7F3EC;
+  --ink:#1A1612;
+  --ink-mid:#3D3428;
+  --ink-light:#7A6E5F;
+  --ink-muted:#A89E8E;
+  --rust:#C84B2F;
+  --rust-light:#E05A3A;
+  --rust-dim:rgba(200,75,47,0.08);
+  --rust-dim2:rgba(200,75,47,0.15);
+  --border:#D8CFC0;
+  --border-light:#E8E1D5;
+  --ff:'Inter',system-ui,sans-serif;
+  --fs:'Source Serif 4','Georgia',serif;
+}
+
+html{scroll-behavior:smooth}
+body{font-family:var(--ff);background:var(--cream);color:var(--ink);font-size:16px;font-weight:400;line-height:1.6;overflow-x:hidden}
+
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:var(--cream)}
+::-webkit-scrollbar-thumb{background:var(--ink-muted);border-radius:2px}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 3rem;height:60px;
+  background:rgba(242,237,227,0.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border-light);
+}
+.nav-logo{
+  font-family:var(--fs);font-size:17px;font-weight:400;font-style:italic;
+  color:var(--ink);text-decoration:none;letter-spacing:-0.01em;
+}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
+.nav-links a{
+  font-size:13px;font-weight:400;color:var(--ink-light);
+  text-decoration:none;letter-spacing:0.01em;
+  transition:color 0.2s;
+}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{
+  font-size:13px;font-weight:500;
+  padding:7px 18px;border-radius:100px;
+  text-decoration:none;
+  background:var(--ink);color:var(--cream);
+  transition:background 0.2s,transform 0.15s;
+}
+.nav-cta:hover{background:var(--ink-mid);transform:translateY(-1px)}
+
+/* ── HERO ── */
+#hero{
+  min-height:100vh;display:flex;flex-direction:column;justify-content:center;
+  padding:9rem 3rem 5rem;
+  border-bottom:1px solid var(--border);
+  position:relative;overflow:hidden;
+}
+.hero-texture{
+  position:absolute;inset:0;pointer-events:none;opacity:0.035;
+  background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231A1612' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.hero-inner{position:relative;max-width:900px}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:500;color:var(--rust);letter-spacing:0.08em;text-transform:uppercase;
+  margin-bottom:2.5rem;
+}
+.hero-kicker::before{content:'';width:24px;height:1px;background:var(--rust);display:inline-block}
+.hero-name{
+  font-family:var(--fs);
+  font-size:clamp(3.5rem,8vw,7.5rem);
+  font-weight:300;line-height:1.0;letter-spacing:-0.03em;
+  color:var(--ink);margin-bottom:0.2rem;
+}
+.hero-name strong{font-weight:400}
+.hero-role{
+  font-family:var(--fs);font-style:italic;
+  font-size:clamp(1.6rem,3.5vw,2.8rem);
+  font-weight:300;color:var(--ink-light);
+  letter-spacing:-0.02em;margin-bottom:3rem;
+}
+.hero-body{
+  font-size:18px;font-weight:300;color:var(--ink-mid);
+  max-width:600px;line-height:1.8;margin-bottom:3.5rem;
+}
+.hero-stats{
+  display:flex;gap:0;margin-bottom:4rem;
+  border:1px solid var(--border);border-radius:8px;
+  width:fit-content;overflow:hidden;background:var(--parchment);
+}
+.hstat{padding:1.25rem 2.5rem;border-right:1px solid var(--border);text-align:center}
+.hstat:last-child{border-right:none}
+.hstat-n{font-family:var(--fs);font-size:2rem;font-weight:400;color:var(--rust);line-height:1;display:block;letter-spacing:-0.02em}
+.hstat-l{font-size:11px;font-weight:400;color:var(--ink-muted);letter-spacing:0.06em;margin-top:4px;display:block;text-transform:uppercase}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+.btn-fill{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 28px;border-radius:100px;text-decoration:none;
+  background:var(--ink);color:var(--cream);
+  font-size:14px;font-weight:500;
+  transition:background 0.2s,transform 0.15s;
+}
+.btn-fill:hover{background:var(--rust);transform:translateY(-1px)}
+.btn-line{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 28px;border-radius:100px;text-decoration:none;
+  background:transparent;color:var(--ink);
+  font-size:14px;font-weight:400;
+  border:1px solid var(--border);
+  transition:border-color 0.2s,color 0.2s,transform 0.15s;
+}
+.btn-line:hover{border-color:var(--ink);transform:translateY(-1px)}
+
+/* ── DIVIDER ── */
+.divider{height:1px;background:var(--border);margin:0}
+
+/* ── SECTION BASE ── */
+section{padding:6rem 3rem}
+.sec-label{
+  font-size:11px;font-weight:500;color:var(--rust);
+  letter-spacing:0.1em;text-transform:uppercase;
+  margin-bottom:1.5rem;display:flex;align-items:center;gap:10px;
+}
+.sec-label::after{content:'';flex:none;width:32px;height:1px;background:var(--rust)}
+h2.head{
+  font-family:var(--fs);font-size:clamp(2rem,4vw,3.2rem);
+  font-weight:300;line-height:1.15;letter-spacing:-0.025em;
+  color:var(--ink);margin-bottom:3.5rem;
+}
+h2.head em{font-weight:300;font-style:italic;color:var(--ink-light)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.7s ease,transform 0.7s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ── ABOUT ── */
+#about{background:var(--parchment);border-bottom:1px solid var(--border)}
+.about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:7rem;align-items:start}
+.about-text p{font-size:16px;font-weight:300;color:var(--ink-mid);line-height:1.9;margin-bottom:1.3rem}
+.about-text p:last-child{margin-bottom:0}
+.about-sidebar{display:flex;flex-direction:column;gap:0;border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.acard{
+  padding:1.25rem 1.5rem;
+  border-bottom:1px solid var(--border);
+  background:var(--cream);
+  transition:background 0.2s;
+}
+.acard:last-child{border-bottom:none}
+.acard:hover{background:var(--cream-dark)}
+.acard h4{
+  font-family:var(--fs);font-size:14px;font-weight:400;font-style:italic;
+  color:var(--ink);margin-bottom:5px;
+}
+.acard p{font-size:13px;font-weight:300;color:var(--ink-light);line-height:1.65}
+.edu-bar{
+  margin-top:2.5rem;padding:1.25rem 1.5rem;
+  border:1px solid var(--border);border-left:3px solid var(--rust);
+  border-radius:0 8px 8px 0;background:var(--rust-dim);
+}
+.edu-bar h4{font-size:13px;font-weight:500;color:var(--rust);margin-bottom:2px}
+.edu-bar p{font-size:13px;font-weight:300;color:var(--ink-light)}
+
+/* ── SKILLS ── */
+#skills{background:var(--cream);border-bottom:1px solid var(--border)}
+.skills-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--border)}
+.sk{padding:1.75rem;background:var(--parchment);transition:background 0.2s}
+.sk:hover{background:var(--cream-dark)}
+.sk-title{font-family:var(--fs);font-size:14px;font-weight:400;font-style:italic;color:var(--ink);margin-bottom:1rem}
+.sk-tags{display:flex;flex-wrap:wrap;gap:6px}
+.sk-tag{
+  font-size:12px;font-weight:400;color:var(--ink-light);
+  padding:4px 10px;border-radius:100px;
+  background:var(--cream);border:1px solid var(--border);
+  transition:border-color 0.15s,color 0.15s,background 0.15s;
+}
+.sk-tag:hover,.sk-tag.hi{background:var(--rust-dim2);color:var(--rust);border-color:rgba(200,75,47,0.3)}
+
+/* ── EXPERIENCE ── */
+#experience{background:var(--parchment);border-bottom:1px solid var(--border)}
+.xp-list{display:flex;flex-direction:column;gap:0;border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.xp{border-bottom:1px solid var(--border);background:var(--cream)}
+.xp:last-child{border-bottom:none}
+.xp-hdr{
+  display:flex;align-items:flex-start;justify-content:space-between;
+  padding:1.75rem 2rem;cursor:pointer;gap:2rem;
+  transition:background 0.2s;user-select:none;
+}
+.xp-hdr:hover{background:var(--cream-dark)}
+.xp-left{flex:1}
+.xp-role{font-family:var(--fs);font-size:18px;font-weight:400;color:var(--ink);margin-bottom:4px;letter-spacing:-0.01em}
+.xp-co{font-size:13px;font-weight:400;color:var(--rust)}
+.xp-right{text-align:right;flex-shrink:0;display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.xp-date{font-size:12px;font-weight:400;color:var(--ink-muted);white-space:nowrap}
+.xp-ind{
+  font-size:11px;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;
+  padding:3px 10px;border-radius:100px;
+  background:var(--rust-dim);color:var(--rust);border:1px solid rgba(200,75,47,0.2);
+}
+.xp-icon{
+  width:20px;height:20px;flex-shrink:0;color:var(--ink-muted);
+  transition:transform 0.3s;margin-top:2px;
+}
+.xp.open .xp-icon{transform:rotate(180deg)}
+.xp-body{max-height:0;overflow:hidden;transition:max-height 0.45s cubic-bezier(0.4,0,0.2,1)}
+.xp.open .xp-body{max-height:700px}
+.xp-inner{padding:0 2rem 1.75rem;border-top:1px solid var(--border-light)}
+.xp-tags{display:flex;flex-wrap:wrap;gap:6px;margin:1rem 0}
+.xp-tag{font-size:11px;font-weight:400;padding:3px 9px;border-radius:100px;background:var(--cream-dark);color:var(--ink-light);border:1px solid var(--border)}
+.xp-bul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.xp-bul li{font-size:14px;font-weight:300;color:var(--ink-mid);line-height:1.75;padding-left:1.25rem;position:relative}
+.xp-bul li::before{content:'—';position:absolute;left:0;color:var(--rust);font-size:12px}
+
+/* ── PROJECTS ── */
+#projects{background:var(--cream);border-bottom:1px solid var(--border)}
+.proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--border)}
+.pc{
+  padding:2.25rem 2rem;background:var(--parchment);
+  display:flex;flex-direction:column;gap:1rem;
+  transition:background 0.2s;position:relative;
+}
+.pc:hover{background:var(--cream-dark)}
+.pc-top{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem}
+.pc-badge{font-size:11px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;padding:3px 10px;border-radius:100px;background:var(--rust-dim2);color:var(--rust);border:1px solid rgba(200,75,47,0.25)}
+.pc-num{font-family:var(--fs);font-size:3rem;font-weight:300;color:var(--border);line-height:1;letter-spacing:-0.04em;flex-shrink:0}
+.pc-title{font-family:var(--fs);font-size:19px;font-weight:400;color:var(--ink);line-height:1.3;letter-spacing:-0.01em}
+.pc-desc{font-size:13px;font-weight:300;color:var(--ink-light);line-height:1.75;flex:1}
+.pc-stack{display:flex;flex-wrap:wrap;gap:5px;margin-top:auto}
+.pc-tag{font-size:11px;font-weight:400;padding:3px 9px;border-radius:100px;background:var(--cream);color:var(--ink-muted);border:1px solid var(--border)}
+
+/* ── CONTACT ── */
+#contact{background:var(--cream-dark)}
+.contact-wrap{max-width:680px;margin:0 auto;text-align:center}
+.contact-quote{
+  font-family:var(--fs);font-size:clamp(1.4rem,3vw,2.2rem);
+  font-weight:300;font-style:italic;
+  color:var(--ink-light);line-height:1.5;margin-bottom:3rem;letter-spacing:-0.01em;
+}
+.clinks{display:flex;justify-content:center;flex-wrap:wrap;gap:1rem;margin-bottom:2.5rem}
+.clink{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:12px 22px;border-radius:100px;text-decoration:none;
+  font-size:14px;font-weight:400;
+  background:var(--parchment);color:var(--ink);border:1px solid var(--border);
+  transition:border-color 0.2s,background 0.2s,transform 0.15s;
+}
+.clink:hover{border-color:var(--ink-light);background:var(--cream);transform:translateY(-1px)}
+.clink svg{flex-shrink:0;color:var(--ink-muted)}
+.clink:hover svg{color:var(--ink)}
+.clink.pri{background:var(--rust);border-color:var(--rust);color:#fff}
+.clink.pri:hover{background:var(--rust-light);border-color:var(--rust-light)}
+.clink.pri svg{color:rgba(255,255,255,0.7)}
+.clink.pri:hover svg{color:#fff}
+.contact-note{font-size:13px;font-weight:300;color:var(--ink-muted)}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--ink);padding:2rem 3rem;
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:12px;color:var(--ink-muted);
+}
+footer a{color:var(--ink-muted);text-decoration:none;transition:color 0.2s}
+footer a:hover{color:var(--cream)}
+.footer-logo{font-family:var(--fs);font-style:italic;font-size:15px;color:var(--cream-darker);letter-spacing:-0.01em}
+
+/* ── RESPONSIVE ── */
+@media(max-width:860px){
+  nav{padding:0 1.5rem}
+  .nav-links{display:none}
+  section{padding:4.5rem 1.5rem}
+  #hero{padding:7rem 1.5rem 4rem}
+  .about-grid,.proj-grid{grid-template-columns:1fr}
+  .skills-wrap{grid-template-columns:1fr 1fr}
+  .hero-stats{flex-wrap:wrap}
+  .xp-hdr{flex-wrap:wrap}
+  footer{flex-direction:column;gap:0.5rem;text-align:center}
+}
+@media(max-width:560px){
+  .skills-wrap{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">Pradeep Reddy</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="mailto:pradeepreddy.api@gmail.com" class="nav-cta">Hire me</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-texture"></div>
+  <div class="hero-inner">
+    <div class="hero-kicker">AI / ML Engineer &amp; Data Scientist</div>
+    <h1 class="hero-name"><strong>Pradeep</strong><br>Reddy.</h1>
+    <p class="hero-role">Building machines that learn,<br>systems that hold.</p>
+    <p class="hero-body">Eight years delivering production machine learning and GenAI capabilities across pharma, healthcare, financial services, and insurance — from raw data pipelines to Kubernetes-deployed LLM systems.</p>
+    <div class="hero-stats">
+      <div class="hstat"><span class="hstat-n">8+</span><span class="hstat-l">Years</span></div>
+      <div class="hstat"><span class="hstat-n">4</span><span class="hstat-l">Industries</span></div>
+      <div class="hstat"><span class="hstat-n">E2E</span><span class="hstat-l">Data to Deploy</span></div>
+      <div class="hstat"><span class="hstat-n">RAG</span><span class="hstat-l">LLM Systems</span></div>
+    </div>
+    <div class="hero-actions">
+      <a href="mailto:pradeepreddy.api@gmail.com" class="btn-fill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+        Get in touch
+      </a>
+      <a href="https://www.linkedin.com/in/pradeep444/" target="_blank" rel="noopener" class="btn-line">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+      <a href="#experience" class="btn-line">View experience →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="sec-label">About</div>
+  <div class="about-grid">
+    <div class="reveal">
+      <h2 class="head">Engineering ML systems<br>that <em>hold up in production</em></h2>
+      <div class="about-text">
+        <p>I'm an AI/ML Engineer who owns execution end-to-end — from data preparation and feature engineering through model training, evaluation, and deployment — with a consistent focus on reliability, maintainability, and audit-ready handoffs.</p>
+        <p>In my most recent engagement at Pfizer, I engineered LLM and RAG solutions for document-grounded search, summarization, and Q&amp;A, backed by semantic retrieval and vector indexing with measurable quality checks and regression-gated release discipline.</p>
+        <p>I thrive in regulated environments where operational rigor matters — pharma, healthcare, insurance, and financial services — with a strong track record translating ambiguous business needs into implementable, testable engineering work.</p>
+      </div>
+      <div class="edu-bar">
+        <h4>B.Tech in AI &amp; Robotics</h4>
+        <p>SRM Institute of Science and Technology &nbsp;·&nbsp; 2013 – 2017</p>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="about-sidebar">
+        <div class="acard"><h4>Generative AI &amp; RAG</h4><p>LLM-driven search, summarization, and Q&amp;A over governed knowledge sources. Full RAG architecture with retrieval tuning, prompt constraints, and regression-gated promotions.</p></div>
+        <div class="acard"><h4>MLOps &amp; Production Discipline</h4><p>MLflow lineage, Docker containerization, Kubernetes deployments, Airflow orchestration, and CI/CD via GitHub Actions with rollback-ready artifact management.</p></div>
+        <div class="acard"><h4>NLP &amp; Supervised Learning</h4><p>Clinical note classification, entity extraction, risk scoring, and anomaly detection with leakage-free, time-aware validation and cohort-level error analysis.</p></div>
+        <div class="acard"><h4>Cloud &amp; Distributed Data</h4><p>AWS (S3, EC2, Lambda, Glue), Azure ML, Databricks, and PySpark for large-scale healthcare and financial datasets with robust schema validation.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="sec-label">Technical Skills</div>
+  <h2 class="head reveal">The full stack of <em>ML engineering</em></h2>
+  <div class="skills-wrap">
+    <div class="sk reveal">
+      <div class="sk-title">Core ML</div>
+      <div class="sk-tags">
+        <span class="sk-tag hi">Python</span><span class="sk-tag hi">Machine Learning</span><span class="sk-tag hi">Deep Learning</span>
+        <span class="sk-tag">SQL</span><span class="sk-tag">Feature Engineering</span><span class="sk-tag">Model Evaluation</span>
+        <span class="sk-tag">scikit-learn</span><span class="sk-tag">PyTorch</span><span class="sk-tag">TensorFlow</span>
+        <span class="sk-tag">pandas</span><span class="sk-tag">NumPy</span>
+      </div>
+    </div>
+    <div class="sk reveal">
+      <div class="sk-title">GenAI &amp; NLP</div>
+      <div class="sk-tags">
+        <span class="sk-tag hi">RAG</span><span class="sk-tag hi">LLMs</span><span class="sk-tag hi">Embeddings</span>
+        <span class="sk-tag">LangChain</span><span class="sk-tag">Hugging Face</span><span class="sk-tag">FAISS</span>
+        <span class="sk-tag">Semantic Search</span><span class="sk-tag">Prompt Engineering</span><span class="sk-tag">Vector Indexing</span>
+      </div>
+    </div>
+    <div class="sk reveal">
+      <div class="sk-title">MLOps &amp; DevOps</div>
+      <div class="sk-tags">
+        <span class="sk-tag hi">Docker</span><span class="sk-tag hi">Kubernetes</span><span class="sk-tag hi">MLflow</span>
+        <span class="sk-tag">GitHub Actions</span><span class="sk-tag">CI/CD</span><span class="sk-tag">Apache Airflow</span>
+        <span class="sk-tag">Experiment Tracking</span><span class="sk-tag">Model Versioning</span><span class="sk-tag">REST APIs</span>
+      </div>
+    </div>
+    <div class="sk reveal">
+      <div class="sk-title">Cloud &amp; Data</div>
+      <div class="sk-tags">
+        <span class="sk-tag hi">AWS</span><span class="sk-tag hi">Azure ML</span><span class="sk-tag hi">Databricks</span>
+        <span class="sk-tag">PySpark</span><span class="sk-tag">S3 / EC2 / Lambda</span><span class="sk-tag">AWS Glue</span>
+        <span class="sk-tag">PostgreSQL</span><span class="sk-tag">MySQL</span><span class="sk-tag">MongoDB</span>
+      </div>
+    </div>
+    <div class="sk reveal">
+      <div class="sk-title">Computer Vision</div>
+      <div class="sk-tags">
+        <span class="sk-tag">CNN Architectures</span><span class="sk-tag">YOLO</span><span class="sk-tag">Faster R-CNN</span>
+        <span class="sk-tag">Image Classification</span><span class="sk-tag">OpenCV</span><span class="sk-tag">Object Detection</span>
+      </div>
+    </div>
+    <div class="sk reveal">
+      <div class="sk-title">Observability &amp; Process</div>
+      <div class="sk-tags">
+        <span class="sk-tag">CloudWatch</span><span class="sk-tag">Structured Logging</span><span class="sk-tag">Metric Dashboards</span>
+        <span class="sk-tag">Alerting</span><span class="sk-tag">Runbooks</span><span class="sk-tag">Incident Response</span>
+        <span class="sk-tag">Agile / Scrum</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="sec-label">Experience</div>
+  <h2 class="head reveal">Eight years across <em>regulated industries</em></h2>
+  <div class="xp-list">
+
+    <div class="xp open reveal">
+      <div class="xp-hdr" onclick="toggle(this)">
+        <div class="xp-left">
+          <div class="xp-role">Generative AI / Machine Learning Engineer</div>
+          <div class="xp-co">Pfizer — Groton, CT</div>
+        </div>
+        <div class="xp-right">
+          <div class="xp-date">Mar 2024 – Present</div>
+          <span class="xp-ind">Pharma</span>
+        </div>
+        <svg class="xp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="xp-body"><div class="xp-inner">
+        <div class="xp-tags"><span class="xp-tag">RAG</span><span class="xp-tag">LLMs</span><span class="xp-tag">LangChain</span><span class="xp-tag">Embeddings</span><span class="xp-tag">Docker</span><span class="xp-tag">Kubernetes</span><span class="xp-tag">MLflow</span><span class="xp-tag">NLP</span><span class="xp-tag">Python</span></div>
+        <ul class="xp-bul">
+          <li>Engineered RAG-based LLM applications delivering document-grounded Q&amp;A and summarization across research and clinical-aligned repositories; owned ingestion-to-inference flow with release controls keeping outputs stable under frequent content refreshes.</li>
+          <li>Designed retrieval pipelines with embedding-based semantic search and vector indexing; tuned chunk strategy, metadata filters, and ranking logic to reduce off-topic retrieval and improve answer grounding.</li>
+          <li>Built evaluation harnesses measuring retrieval relevance and response stability with curated query sets; blocked promotions on regression after re-index, prompt updates, or source expansion.</li>
+          <li>Deployed inference services into Kubernetes with readiness/liveness checks and controlled rollouts; containerized with Docker for deterministic runtime behavior and dependency control.</li>
+          <li>Implemented structured logging and trace signals across ingestion, retrieval, and generation layers to accelerate root-cause isolation and correlate failures to documents, index versions, and prompt releases.</li>
+        </ul>
+      </div></div>
+    </div>
+
+    <div class="xp reveal">
+      <div class="xp-hdr" onclick="toggle(this)">
+        <div class="xp-left">
+          <div class="xp-role">AI / ML Engineer</div>
+          <div class="xp-co">CVS Health — Irving, TX</div>
+        </div>
+        <div class="xp-right">
+          <div class="xp-date">Feb 2022 – Jan 2024</div>
+          <span class="xp-ind">Healthcare</span>
+        </div>
+        <svg class="xp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="xp-body"><div class="xp-inner">
+        <div class="xp-tags"><span class="xp-tag">NLP</span><span class="xp-tag">PySpark</span><span class="xp-tag">Databricks</span><span class="xp-tag">Apache Airflow</span><span class="xp-tag">GitHub Actions</span><span class="xp-tag">Docker</span><span class="xp-tag">Python</span></div>
+        <ul class="xp-bul">
+          <li>Delivered ML models supporting healthcare analytics for member navigation, claims, and service operations; owned requirements translation, model evaluation, and production integration across multiple stakeholder groups.</li>
+          <li>Built scalable PySpark/Databricks transformations for high-volume healthcare datasets; implemented NLP pipelines for clinical notes classification and entity extraction with standardized preprocessing and labeling logic.</li>
+          <li>Automated pipeline schedules with Apache Airflow — retries, alert hooks, and deterministic ordering to stabilize refresh and scoring cycles; enforced CI/CD release controls via GitHub Actions with gated promotions.</li>
+          <li>Implemented experiment tracking and artifact management to preserve reproducibility and enable rollback-ready promotions linking deployed artifacts to training inputs and configurations.</li>
+        </ul>
+      </div></div>
+    </div>
+
+    <div class="xp reveal">
+      <div class="xp-hdr" onclick="toggle(this)">
+        <div class="xp-left">
+          <div class="xp-role">Machine Learning Engineer</div>
+          <div class="xp-co">USAA — Plano, TX</div>
+        </div>
+        <div class="xp-right">
+          <div class="xp-date">Mar 2020 – Jan 2022</div>
+          <span class="xp-ind">Financial Services</span>
+        </div>
+        <svg class="xp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="xp-body"><div class="xp-inner">
+        <div class="xp-tags"><span class="xp-tag">Risk Modeling</span><span class="xp-tag">Fraud Detection</span><span class="xp-tag">REST APIs</span><span class="xp-tag">Docker</span><span class="xp-tag">CI/CD</span><span class="xp-tag">Python</span><span class="xp-tag">SQL</span></div>
+        <ul class="xp-bul">
+          <li>Engineered risk and fraud-oriented classification models integrating into operational decisioning workflows; implemented time-sliced validation strategies and threshold analysis balancing false positive/negative tradeoffs.</li>
+          <li>Built modular training and scoring components to keep promotion paths maintainable; delivered batch scoring pipelines with deterministic output schemas and versioned data contracts.</li>
+          <li>Implemented REST-based inference integrations with schema validation and defensive error handling; containerized scoring services with Docker to standardize runtime dependencies and improve repeatability.</li>
+        </ul>
+      </div></div>
+    </div>
+
+    <div class="xp reveal">
+      <div class="xp-hdr" onclick="toggle(this)">
+        <div class="xp-left">
+          <div class="xp-role">Analytics Engineer</div>
+          <div class="xp-co">HDFC ERGO — India</div>
+        </div>
+        <div class="xp-right">
+          <div class="xp-date">Jan 2018 – Dec 2019</div>
+          <span class="xp-ind">Insurance</span>
+        </div>
+        <svg class="xp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="xp-body"><div class="xp-inner">
+        <div class="xp-tags"><span class="xp-tag">Claims Analytics</span><span class="xp-tag">Risk Modeling</span><span class="xp-tag">Python</span><span class="xp-tag">scikit-learn</span><span class="xp-tag">SQL</span><span class="xp-tag">pandas</span></div>
+        <ul class="xp-bul">
+          <li>Developed claims and risk analytics models on structured insurance datasets; engineered features from policy, customer, and claims attributes with leakage controls and consistent evaluation procedures.</li>
+          <li>Produced interpretable summaries translating model behavior into operationally meaningful terms; coordinated with operations teams to align outcome definitions with real claims-handling processes.</li>
+          <li>Implemented schema drift detection in upstream extracts and automated repeatable refresh and scoring execution through scripting and scheduled job patterns.</li>
+        </ul>
+      </div></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="sec-label">Featured Work</div>
+  <h2 class="head reveal">Production systems <em>across four domains</em></h2>
+  <div class="proj-grid">
+
+    <div class="pc reveal">
+      <div class="pc-top">
+        <span class="pc-badge">Pharma</span>
+        <span class="pc-num">01</span>
+      </div>
+      <div class="pc-title">Clinical RAG System — Pfizer</div>
+      <p class="pc-desc">Document-grounded Q&amp;A and summarization over research and clinical repositories. Full ingestion-to-inference architecture with embedding-based retrieval, vector indexing, prompt templates with response constraints, and regression-gated promotion controls.</p>
+      <div class="pc-stack"><span class="pc-tag">RAG</span><span class="pc-tag">LangChain</span><span class="pc-tag">FAISS</span><span class="pc-tag">Docker</span><span class="pc-tag">Kubernetes</span><span class="pc-tag">MLflow</span><span class="pc-tag">Hugging Face</span></div>
+    </div>
+
+    <div class="pc reveal">
+      <div class="pc-top">
+        <span class="pc-badge">Healthcare</span>
+        <span class="pc-num">02</span>
+      </div>
+      <div class="pc-title">Clinical NLP Pipeline — CVS Health</div>
+      <p class="pc-desc">End-to-end NLP pipeline for classification and extraction on clinical notes and member interaction text. Standardized preprocessing, tokenization, and labeling logic across heterogeneous sources; cohort-level error analysis driving targeted data remediation.</p>
+      <div class="pc-stack"><span class="pc-tag">NLP</span><span class="pc-tag">Hugging Face</span><span class="pc-tag">PySpark</span><span class="pc-tag">Databricks</span><span class="pc-tag">Airflow</span><span class="pc-tag">CI/CD</span></div>
+    </div>
+
+    <div class="pc reveal">
+      <div class="pc-top">
+        <span class="pc-badge">Financial Services</span>
+        <span class="pc-num">03</span>
+      </div>
+      <div class="pc-title">Fraud Detection Models — USAA</div>
+      <p class="pc-desc">Risk and fraud classification models integrated into operational decisioning workflows. Time-sliced validation, threshold analysis, modular scoring components, batch scoring with versioned data contracts, and REST-based inference integrations.</p>
+      <div class="pc-stack"><span class="pc-tag">scikit-learn</span><span class="pc-tag">Python</span><span class="pc-tag">REST API</span><span class="pc-tag">Docker</span><span class="pc-tag">CI/CD</span><span class="pc-tag">SQL</span></div>
+    </div>
+
+    <div class="pc reveal">
+      <div class="pc-top">
+        <span class="pc-badge">Insurance</span>
+        <span class="pc-num">04</span>
+      </div>
+      <div class="pc-title">Claims Risk Analytics — HDFC ERGO</div>
+      <p class="pc-desc">End-to-end claims and risk modeling on structured insurance datasets. Feature engineering with leakage controls, cohort-level error analysis, interpretable stakeholder summaries, SQL data integrity audits, and automated retraining cycles.</p>
+      <div class="pc-stack"><span class="pc-tag">Python</span><span class="pc-tag">SQL</span><span class="pc-tag">scikit-learn</span><span class="pc-tag">pandas</span><span class="pc-tag">NumPy</span><span class="pc-tag">Batch Scoring</span></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-wrap">
+    <div class="sec-label" style="justify-content:center">Contact</div>
+    <h2 class="head reveal" style="text-align:center;margin-bottom:1.5rem">Let's build something<br><em>worth deploying</em></h2>
+    <p class="contact-quote reveal">"Open to AI/ML engineering roles in regulated industries — pharma, healthcare, and financial services."</p>
+    <div class="clinks reveal">
+      <a href="mailto:pradeepreddy.api@gmail.com" class="clink pri">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+        pradeepreddy.api@gmail.com
+      </a>
+      <a href="tel:+14424458260" class="clink">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 13.5 19.79 19.79 0 0 1 1.08 4.82 2 2 0 0 1 3.05 2.63h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 9.91A16 16 0 0 0 13 15.91l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 17z"/></svg>
+        (442) 445-8260
+      </a>
+      <a href="https://www.linkedin.com/in/pradeep444/" target="_blank" rel="noopener" class="clink">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        linkedin.com/in/pradeep444
+      </a>
+    </div>
+    <p class="contact-note reveal">Based in the US &nbsp;·&nbsp; Open to remote &amp; hybrid roles</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">Pradeep Reddy</span>
+  <span>AI/ML Engineer &nbsp;·&nbsp; 8 years &nbsp;·&nbsp; Pharma · Healthcare · FinServ · Insurance</span>
+  <a href="mailto:pradeepreddy.api@gmail.com">pradeepreddy.api@gmail.com</a>
+</footer>
+
+<script>
+/* SCROLL REVEAL */
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+},{threshold:0.08,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.reveal').forEach((el,i)=>{
+  el.style.transitionDelay=(i%3)*0.1+'s';
+  io.observe(el);
+});
+
+/* ACCORDION */
+function toggle(hdr){
+  const item=hdr.closest('.xp');
+  const wasOpen=item.classList.contains('open');
+  document.querySelectorAll('.xp.open').forEach(x=>x.classList.remove('open'));
+  if(!wasOpen)item.classList.add('open');
+}
+
+/* SMOOTH SCROLL */
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}
+  });
+});
+
+/* NAV ACTIVE */
+const secs=document.querySelectorAll('section[id]');
+const navAs=document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll',()=>{
+  let cur='';
+  secs.forEach(s=>{if(window.scrollY>=s.offsetTop-80)cur=s.id});
+  navAs.forEach(a=>{
+    const active=a.getAttribute('href')==='#'+cur;
+    a.style.color=active?'var(--ink)':'';
+    a.style.fontWeight=active?'500':'';
+  });
+},{passive:true});
+</script>
+</body>
+</html>
